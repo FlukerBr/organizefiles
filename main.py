@@ -1,6 +1,5 @@
 import os
 import PySimpleGUI as sg
-from PySimpleGUI.PySimpleGUI import Image
 def organizar(path):
     listfile = os.listdir(path)
     for file in listfile:
