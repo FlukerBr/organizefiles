@@ -20,7 +20,7 @@ def organizar(path):
 def tela():
     sg.theme('Default1')
     layout = [
-        [sg.Text('Caminho : ', text_color='gray'), sg.Input(key='path', size=(23, 1)), sg.FolderBrowse(button_text='Abrir...', button_color=('white', '#008080'), key='pasta', )],
+        [sg.Text('Caminho : ', text_color='gray'), sg.Input(key='path', size=(23, 1)), sg.FolderBrowse(button_text='Escolher...', button_color=('white', '#008080'), key='pasta', )],
         [sg.Button('Organizar', pad=(120, 0), button_color=('white', '#008080'))],
         [sg.Text('Created by FlukerBr', size=(30, 1), key='text', text_color='#008080')]
     ]
