@@ -1,22 +1,22 @@
 import os
 import PySimpleGUI as sg
-from PySimpleGUI.PySimpleGUI import Image
 def organizar(path):
     listfile = os.listdir(path)
     for file in listfile:
-        print(file)
-        i = file.find('.') + 1
-        ii = file.find('.')
-        nomepasta = file[i:]
-        with open(r'{0}/{1}'.format(path, file), 'rb') as fr:
-            filerb = fr.read()
-        try:
-            os.makedirs(f'{path}/{nomepasta}')
-        except FileExistsError:
-            pass
-        with open(r'{0}/{1}/{2}'.format(path, nomepasta, file), 'wb') as fw:
-            fw.write(filerb)
-        os.remove(r'{0}/{1}'.format(path, file))
+        if '.' in file:
+            print(file)
+            i = file.find('.') + 1
+            ii = file.find('.')
+            nomepasta = file[i:]
+            with open(r'{0}/{1}'.format(path, file), 'rb') as fr:
+                filerb = fr.read()
+            try:
+                os.makedirs(f'{path}/{nomepasta}')
+            except FileExistsError:
+                pass
+            with open(r'{0}/{1}/{2}'.format(path, nomepasta, file), 'wb') as fw:
+                fw.write(filerb)
+            os.remove(r'{0}/{1}'.format(path, file))
 def tela():
     sg.theme('Default1')
     layout = [
